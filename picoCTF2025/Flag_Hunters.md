@@ -7,8 +7,10 @@
 >Connect to the program with netcat:  
 >$ nc verbal-sleep.picoctf.net 56688
 
+## From the source code provided
+
 ```python
-import re
+import re #library that working with regular expressions, can search, match, and manipulate strings based on patterns
 import time
 
 
