@@ -7,3 +7,23 @@
 >Connect to the program with netcat:  
 >$ nc verbal-sleep.picoctf.net 56688
 
+```python
+import re
+import time
+
+
+# Read in flag from file  
+flag = open('flag.txt', 'r').read()
+
+secret_intro = \
+'''Pico warriors rising, puzzles laid bare,
+Solving each challenge with precision and flair.
+With unity and skill, flags we deliver,
+The ether’s ours to conquer, '''\
++ flag + '\n' #From here, learnt that the flag is hidden in this part
+
+
+song_flag_hunters = secret_intro +\ #This variable need to be triggled 
+'''
+
+```
