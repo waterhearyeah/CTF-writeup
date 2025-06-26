@@ -1,3 +1,3 @@
 # CTF-writeup
 Journey to learn CTF, start from following others write up and do in note for own learning purposes 
-\nMainly learn from: https://github.com/Cajac/picoCTF-Writeups/tree/main
+Mainly learn from: https://github.com/Cajac/picoCTF-Writeups/tree/main
