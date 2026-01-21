@@ -37,7 +37,7 @@ To find back the M, [COZT's video](https://www.youtube.com/watch?v=jJTaMjOicGI&t
 > print(int(root).to_bytes((root.bit_length()+7)//8,'big').decode())
 
 Refer to [naba-h's writeup](https://github.com/naba-h/picoCTF-crack-the-power), the iroot function in gmpy2 is actually same as code below:
->def nth_root(n, root):
+>    def nth_root(n, root):
 >
 >    if n < 0:
 >
