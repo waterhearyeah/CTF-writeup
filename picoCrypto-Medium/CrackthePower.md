@@ -23,51 +23,35 @@ Personal learning outcome:
 The C in message is actually M(flag) transform to bits, then power e (M^e), then find the mod (%) to find the remainder (C).
 
 To find back the M, [COZT's video](https://www.youtube.com/watch?v=jJTaMjOicGI&t=28s) use gmpy2 in python script:
-> import gmpy2
->
-> e = 20
->
-> c = [c value]
->
->  root, exact = gmpy2.iroot(c,e)
->
-> if not exact:
->   print("not found")
-> print(root)
-> print(int(root).to_bytes((root.bit_length()+7)//8,'big').decode())
+```python
+import gmpy2
+e = 20
+c = [c value]
+root, exact = gmpy2.iroot(c,e)
+if not exact:
+  print("not found")
+print(root)
+print(int(root).to_bytes((root.bit_length()+7)//8,'big').decode())
+```
 
 Refer to [naba-h's writeup](https://github.com/naba-h/picoCTF-crack-the-power), the iroot function in gmpy2 is actually same as code below:
->
->
->def nth_root(n, root):
->
->    if n < 0:
->
->        return None
->
->    if root == 1:
->
->        return n
->
->    low = 0
->
->    high = n
->
->    while low <= high:
->
->        mid = (low + high) // 2
->
->        mid_pow = pow(mid, root)
->
->        if mid_pow == n:
->
->            return mid, True
->
->        elif mid_pow < n:
->
->            low = mid + 1
->
->        else:
->            high = mid - 1
->
->    return high, False
+
+```python
+def nth_root(n, root):
+    if n < 0:
+        return None
+    if root == 1:
+        return n
+    low = 0
+    high = n
+    while low <= high:
+        mid = (low + high) // 2
+        mid_pow = pow(mid, root)
+        if mid_pow == n:
+            return mid, True
+        elif mid_pow < n:
+            low = mid + 1
+        else:
+          high = mid - 1
+    return high, False
+```
