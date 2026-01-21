@@ -3,10 +3,7 @@
 >Description
 >We received an encrypted message. The modulus is built from primes large enough that factoring them isn’t an option, at least not today.
 >
->See if you can make sense of the numbers and reveal the flag. Download the message.
-
-##The message:
-> Every challenger have diff value, but the important value is e & C only
+>See if you can make sense of the numbers and reveal the flag. Download the message. (Every challenger have diff value, but the important value is e & C only)
 
 Refer [naba-h's writeup](https://github.com/naba-h/picoCTF-crack-the-power) & [COZT's video](https://www.youtube.com/watch?v=jJTaMjOicGI&t=28s)
 
@@ -41,19 +38,34 @@ To find back the M, [COZT's video](https://www.youtube.com/watch?v=jJTaMjOicGI&t
 
 Refer to [naba-h's writeup](https://github.com/naba-h/picoCTF-crack-the-power), the iroot function in gmpy2 is actually same as code below:
 >def nth_root(n, root):
+>
 >    if n < 0:
+>
 >        return None
+>
 >    if root == 1:
+>
 >        return n
+>
 >    low = 0
+>
 >    high = n
+>
 >    while low <= high:
+>
 >        mid = (low + high) // 2
+>
 >        mid_pow = pow(mid, root)
+>
 >        if mid_pow == n:
+>
 >            return mid, True
+>
 >        elif mid_pow < n:
+>
 >            low = mid + 1
+>
 >        else:
 >            high = mid - 1
+>
 >    return high, False
